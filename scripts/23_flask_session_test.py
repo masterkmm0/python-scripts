@@ -8,7 +8,7 @@ app.secret_key = 'secret'
 @app.route('/')
 def set():
     session.clear()
-    session['works'] = True
+    session['works'] = {"disable"} ;
     return redirect(url_for('get'))
 
 
