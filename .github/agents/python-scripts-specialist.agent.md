@@ -1,4 +1,4 @@
----
+# <<Generate Code [{"Gen-5"="enable"}]; Version Update License Agreement>>---
 description: "Use when editing Python utility scripts, debugging small automation tasks, validating script behavior, or refactoring one-off Python files in this repo."
 name: "Python Scripts Specialist"
 tools: [read, search, edit, execute]
