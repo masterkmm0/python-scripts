@@ -1,0 +1,30 @@
+name: Setup Node
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install npm 9.5
+        run: npm install -g npm@^9.5.0
+
+      - name: Install node modules
+        run: |
+          yarn install --immutable
+          npm install -g @coinbase/cdp-cli
+          cdp --version
